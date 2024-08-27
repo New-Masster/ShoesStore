@@ -1,12 +1,27 @@
 from rest_framework import generics
-from .models import Shoe
-from .serializers import ShoeSerializer
+from .models import Brand, Category, Shoe
+from .serializers import BrandSerializer, CategorySerializer, ShoeSerializer
 
-# Create your views here.
-class ProductListCreateAPIView(generics.ListCreateAPIView):
+class BrandListCreateAPIView(generics.ListCreateAPIView):
+    queryset = Brand.objects.all()
+    serializer_class = BrandSerializer
+
+class BrandRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Brand.objects.all()
+    serializer_class = BrandSerializer
+
+class CategoryListCreateAPIView(generics.ListCreateAPIView):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
+
+class CategoryRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
+
+class ShoeListCreateAPIView(generics.ListCreateAPIView):
     queryset = Shoe.objects.all()
     serializer_class = ShoeSerializer
 
-class ProductRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
+class ShoeRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Shoe.objects.all()
     serializer_class = ShoeSerializer
