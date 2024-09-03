@@ -1,22 +1,25 @@
 from django.urls import path
 from .views import (
-    PromotionListCreateAPIView, 
-    PromotionRetrieveUpdateDestroyAPIView,
-    CustomerListCreateAPIView, 
-    CustomerRetrieveUpdateDestroyAPIView,
-    OrderListCreateAPIView, 
-    OrderRetrieveUpdateDestroyAPIView,
-    OrderItemListCreateAPIView, 
-    OrderItemRetrieveUpdateDestroyAPIView
+    PromotionAPIView,
+    PromotionDetailAPIView,
+    CustomerAPIView,
+    CustomerDetailAPIView,
+    OrderAPIView,
+    OrderDetailAPIView,
+    OrderItemAPIView,
+    OrderItemDetailAPIView
 )
 
 urlpatterns = [
-    path('', PromotionListCreateAPIView.as_view(), name='promotion-list-create'),
-    path('<int:pk>/', PromotionRetrieveUpdateDestroyAPIView.as_view(), name='promotion-detail'),
-    path('customers/', CustomerListCreateAPIView.as_view(), name='customer-list-create'),
-    path('customers/<int:pk>/', CustomerRetrieveUpdateDestroyAPIView.as_view(), name='customer-detail'),
-    path('orders/', OrderListCreateAPIView.as_view(), name='order-list-create'),
-    path('orders/<int:pk>/', OrderRetrieveUpdateDestroyAPIView.as_view(), name='order-detail'),
-    path('order-items/', OrderItemListCreateAPIView.as_view(), name='orderitem-list-create'),
-    path('order-items/<int:pk>/', OrderItemRetrieveUpdateDestroyAPIView.as_view(), name='orderitem-detail'),
+    path('', PromotionAPIView.as_view(), name='promotion-list-create'),
+    path('<int:pk>/', PromotionDetailAPIView.as_view(), name='promotion-detail'),
+    
+    path('customers/', CustomerAPIView.as_view(), name='customer-list-create'),
+    path('customers/<int:pk>/', CustomerDetailAPIView.as_view(), name='customer-detail'),
+    
+    path('orders/', OrderAPIView.as_view(), name='order-list-create'),
+    path('orders/<int:pk>/', OrderDetailAPIView.as_view(), name='order-detail'),
+    
+    path('order-items/', OrderItemAPIView.as_view(), name='order-item-list-create'),
+    path('order-items/<int:pk>/', OrderItemDetailAPIView.as_view(), name='order-item-detail'),
 ]

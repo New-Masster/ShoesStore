@@ -20,3 +20,44 @@ db.sqlite3
 
 # Arquivos secretos
 *.env
+
+# Configurações do Django
+*.pot
+*.py[cod]
+*.sqlite3
+
+# Arquivos temporários do sistema
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Padrões de build
+build/
+dist/
+*.egg-info/
+
+# Arquivos de teste
+coverage/
+nosetests.xml
+*.cover
+*.hypothesis/
+*.tox/
+
+# Outros arquivos gerados
+*.log
+*.pid
+*.seed
+*.db
+*.sqlite3
+
+# Diretórios de dependências
+node_modules/
+
+# Arquivos de configuração de segurança
+*.key
+*.pem
+
+# Outros
+*.bak
+*.tmp
