@@ -1,0 +1,82 @@
+# Ambiente virtual
+venv/
+env/
+
+# Arquivos de configuração do IDE
+*.idea/
+*.vscode/
+
+# Arquivos de cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Banco de dados
+db.sqlite3
+
+# Logs
+*.log
+
+# Arquivos secretos
+*.env
+*.env.*
+
+# Configurações do Django
+*.pot
+*.py[cod]
+*/migrations/*.py
+*/migrations/*.pyc
+
+# Arquivos temporários do sistema
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Padrões de build do React
+build/
+dist/
+*.egg-info/
+
+# Arquivos de teste
+coverage/
+nosetests.xml
+*.cover
+*.hypothesis/
+*.tox/
+.pytest_cache/
+.coverage
+
+# Outros arquivos gerados
+*.pid
+*.seed
+*.db
+*.sqlite3
+
+# Diretórios de dependências
+node_modules/
+
+# Arquivos de configuração de segurança
+*.key
+*.pem
+
+# Outros
+*.bak
+*.tmp
+Pipfile.lock
+poetry.lock
+
+# Ignorar arquivos pesados (imagens, vídeos, etc.)
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.mp4
+*.mov
+*.avi
+*.zip
+*.tar
+*.gz
+*.rar
+*.7z

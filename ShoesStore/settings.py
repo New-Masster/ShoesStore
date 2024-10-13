@@ -18,7 +18,7 @@ SECRET_KEY = 'django-insecure-y9_%p3jj46mk+nvuw07ypn7h@s1x+^r84v7o^-g&3bd&puo74*
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = []  
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -32,11 +32,12 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt.token_blacklist',
     'products',
     'promotions',
+    'corsheaders', 
 ]
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated',  
+        'rest_framework.permissions.IsAuthenticated',
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
@@ -44,6 +45,7 @@ REST_FRAMEWORK = {
 }
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',  
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -54,6 +56,11 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'ShoesStore.urls'
+
+# Requisições Frontend
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",  # URL do Frontend
+]
 
 TEMPLATES = [
     {
