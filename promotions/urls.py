@@ -1,25 +1,14 @@
-from django.urls import path
-from .views import (
-    PromotionAPIView,
-    PromotionDetailAPIView,
-    CustomerAPIView,
-    CustomerDetailAPIView,
-    OrderAPIView,
-    OrderDetailAPIView,
-    OrderItemAPIView,
-    OrderItemDetailAPIView
-)
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from .views import PromotionViewSet, CustomerViewSet, OrderViewSet, OrderItemViewSet
+from .views_fbv import promotion_list
+
+router = DefaultRouter()
+router.register(r'promotions', PromotionViewSet)
+router.register(r'customers', CustomerViewSet)
+router.register(r'orders', OrderViewSet)
+router.register(r'order-items', OrderItemViewSet)
 
 urlpatterns = [
-    path('', PromotionAPIView.as_view(), name='promotion-list-create'),
-    path('<int:pk>/', PromotionDetailAPIView.as_view(), name='promotion-detail'),
-    
-    path('customers/', CustomerAPIView.as_view(), name='customer-list-create'),
-    path('customers/<int:pk>/', CustomerDetailAPIView.as_view(), name='customer-detail'),
-    
-    path('orders/', OrderAPIView.as_view(), name='order-list-create'),
-    path('orders/<int:pk>/', OrderDetailAPIView.as_view(), name='order-detail'),
-    
-    path('order-items/', OrderItemAPIView.as_view(), name='order-item-list-create'),
-    path('order-items/<int:pk>/', OrderItemDetailAPIView.as_view(), name='order-item-detail'),
+    path('promotions-fbv/', promotion_list, name='promotion-list-fbv'), 
 ]

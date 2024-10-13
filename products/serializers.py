@@ -12,8 +12,6 @@ class CategorySerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class ShoeSerializer(serializers.ModelSerializer):
-    categories = serializers.PrimaryKeyRelatedField(queryset=Category.objects.all(), many=True)
-
     class Meta:
         model = Shoe
         fields = '__all__'

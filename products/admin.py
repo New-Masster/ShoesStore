@@ -1,20 +1,20 @@
-from django.contrib import admin # Gerenciar os itens no Django Admin(5] item da prova)
+from django.contrib import admin  
 from .models import Brand, Category, Shoe
 
-# Register your models here.
+
 @admin.register(Brand)
 class BrandAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name')  # ID e Nome na lista
-    search_fields = ('name',)  # Busca por Nome
+    list_display = ('id', 'name')  
+    search_fields = ('name',) 
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name')  # ID e Nome na lista
-    search_fields = ('name',)  # Busca por Nome
+    list_display = ('id', 'name') 
+    search_fields = ('name',)  
 
 @admin.register(Shoe)
 class ShoeAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'brand', 'price', 'stock')  # ID, Nome, Marca, Preço e Estoque
-    search_fields = ('name', 'brand__name')  # Busca por Nome e Marca
-    list_filter = ('brand',)  # Filtro por Marca
-    list_editable = ('price', 'stock')  # Editar Preço e Estoque diretamente na lista
+    list_display = ('id', 'name', 'brand', 'price', 'stock')  
+    search_fields = ('name', 'brand__name')  
+    list_filter = ('brand',)  
+    list_editable = ('price', 'stock')  

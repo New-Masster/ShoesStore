@@ -20,11 +20,14 @@ db.sqlite3
 
 # Arquivos secretos
 *.env
+*.env.*
 
 # Configurações do Django
 *.pot
 *.py[cod]
 *.sqlite3
+*/migrations/*.py
+*/migrations/*.pyc
 
 # Arquivos temporários do sistema
 *.swp
@@ -43,6 +46,8 @@ nosetests.xml
 *.cover
 *.hypothesis/
 *.tox/
+.pytest_cache/
+.coverage
 
 # Outros arquivos gerados
 *.log
@@ -61,3 +66,5 @@ node_modules/
 # Outros
 *.bak
 *.tmp
+Pipfile.lock
+poetry.lock
